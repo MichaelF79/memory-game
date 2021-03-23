@@ -1,3 +1,6 @@
-h1 {
-  color: aqua;
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 400px;
 }
