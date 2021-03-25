@@ -4,4 +4,30 @@
   margin:auto;
   width: 400px;
   height: 600px;
+  border: 3px solid black;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+
+  .header__name {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #01263d;
+  }
+  
+  .header__score {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+  }
+
+}
+
+body {
+  background-color: rgb(164, 242, 245);
 }
