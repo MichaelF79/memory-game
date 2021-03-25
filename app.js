@@ -78,12 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
   ]
 
   //add cardArray.sort ->
+  cardArray.sort(() => 0.5 - Math.random())
 
   const grid = document.querySelector('.grid')
   const resultDisplay = document.querySelector('#result')
   let cardsChosen = []
   let cardsChosenId = []
-  let cardsWon = [];
+  let cardsWon = []
 
   // Create gameboard grid
   function createBoard(){
@@ -91,24 +92,52 @@ document.addEventListener('DOMContentLoaded', () => {
         const card = document.createElement('img')
         card.setAttribute('src', 'images/card-back.png')
         card.setAttribute('data-id', i)
+        card.addEventListener('click', flipCard)
         grid.appendChild(card)
         //need to addEventListener('click',//
     }
   }
-
   // add matching card functions//
+  function checkForMatch() {
+    const cards = document.querySelectorAll('img')
+    const optionOneId = cardsChosenId[0]
+    const optionTwoId = cardsChosenId[1]
+    
+    if(optionOneId == optionTwoId) {
+      cards[optionOneId].setAttribute('src', 'images/card-back.png')
+      cards[optionTwoId].setAttribute('src', 'images/card-back.png')
+      alert('You have clicked the same image!')
+    }
+    else if (cardsChosen[0] === cardsChosen[1]) {
+      alert('You found a match')
+      cards[optionOneId].setAttribute('src', 'images/white.png')
+      cards[optionTwoId].setAttribute('src', 'images/white.png')
+      cards[optionOneId].removeEventListener('click', flipCard)
+      cards[optionTwoId].removeEventListener('click', flipCard)
+      cardsWon.push(cardsChosen)
+    } else {
+      cards[optionOneId].setAttribute('src', 'images/card-back.png')
+      cards[optionTwoId].setAttribute('src', 'images/card-back.png')
+      alert('Sorry, go again')
+    }
+    cardsChosen = []
+    cardsChosenId = []
+    resultDisplay.textContent = cardsWon.length
+    if  (cardsWon.length === cardArray.length/2) {
+      resultDisplay.textContent = 'Congratulations! You matched all the mascots!!'
+    }
+  }
 
-  // add card flip function//
+  //flip your card
   function flipCard() {
     let cardId = this.getAttribute('data-id')
     cardsChosen.push(cardArray[cardId].name)
     cardsChosenId.push(cardId)
     this.setAttribute('src', cardArray[cardId].img)
-    if (cardsChosen.length === 2) {
+    if (cardsChosen.length ===2) {
       setTimeout(checkForMatch, 500)
     }
   }
-
 
   createBoard()
 })

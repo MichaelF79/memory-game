@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@700&display=swap');
+
+.header {
+  display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+
+  .header__name {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    color: #01263d;
+  }
+  
+  .header__score {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: black;
+  }
+
+}
