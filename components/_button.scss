@@ -1,0 +1,11 @@
+.refresh-button {
+	display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: auto;
+  padding: 2px;
+  color: white;
+  border-radius: 25px;
+  background-color: $color-blue;
+  border-color: $color-black;
+}

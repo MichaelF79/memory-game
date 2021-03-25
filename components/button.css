@@ -1,0 +1,7 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 5px;
+  border-radius: 25px;
+}
