@@ -4,6 +4,7 @@
   margin: auto;
   width: 400px;
   height: 600px;
+  border: 3px solid #01263d;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -14,14 +15,14 @@
   text-align: center;
 }
 .header .header__name {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif, sans-serif;
   font-size: 35px;
-  color: #01263d;
+  color: #003250;
 }
 .header .header__score {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
-  color: black;
+  color: #000000;
 }
 
 body {
