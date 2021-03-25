@@ -106,10 +106,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if(optionOneId == optionTwoId) {
       cards[optionOneId].setAttribute('src', 'images/card-back.png')
       cards[optionTwoId].setAttribute('src', 'images/card-back.png')
-      alert('You have clicked the same image!')
+      alert("Oops, you've clicked the same image!")
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
-      alert('You found a match')
+      alert("Awesome! It's a match!")
       cards[optionOneId].setAttribute('src', 'images/white.png')
       cards[optionTwoId].setAttribute('src', 'images/white.png')
       cards[optionOneId].removeEventListener('click', flipCard)
@@ -118,13 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       cards[optionOneId].setAttribute('src', 'images/card-back.png')
       cards[optionTwoId].setAttribute('src', 'images/card-back.png')
-      alert('Sorry, go again')
+      alert('Sorry, go again...')
     }
     cardsChosen = []
     cardsChosenId = []
     resultDisplay.textContent = cardsWon.length
     if  (cardsWon.length === cardArray.length/2) {
-      resultDisplay.textContent = 'Congratulations! You matched all the mascots!!'
+      resultDisplay.textContent = ' Congratulations! You matched all the mascots!!'
     }
   }
 
