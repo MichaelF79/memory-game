@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.setAttribute('data-id', i)
         card.addEventListener('click', flipCard)
         grid.appendChild(card)
-        //need to addEventListener('click',//
+        //need to addEventListener('click')//
     }
   }
   // add matching card functions//
@@ -127,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
       resultDisplay.textContent = ' Congratulations! You matched all the mascots!!'
     }
   }
-
   //flip your card
   function flipCard() {
     let cardId = this.getAttribute('data-id')
@@ -138,15 +137,13 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(checkForMatch, 500)
     }
   }
-
   //Play Again
   const refreshButton = document.querySelector('.refresh-button');
-
   const refreshPage = () => {
   location.reload();
   }
-
   refreshButton.addEventListener('click', refreshPage)
 
   createBoard()
+
 })
